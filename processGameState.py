@@ -55,9 +55,9 @@ class ProcessGameState:
         valid_rows = set(self.all_rows_within_bounds())
 
         team2_t_side_in_bounds = team2_t_side.index.isin(valid_rows)
-        res = team2_t_side_in_bounds.mean() >= 0.5
-        
-        return res
+        avarege_in_bounds = team2_t_side_in_bounds.mean()
+
+        return avarege_in_bounds >= 0.5
     
     # returns the average timer that a team and side enters a bombsite with certain weapons and number of weapons
     def average_timer(self, team, side, bombsite, weapons, min_num):
