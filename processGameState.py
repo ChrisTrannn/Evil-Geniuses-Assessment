@@ -48,16 +48,17 @@ class ProcessGameState:
                 weapon_classes[dct['weapon_class']] += 1
         
         return list(weapon_classes.items())
+    
+    # returns a boolean when a team and side enters the boundary more than 50% of the time
+    def is_common_strategy(self, team, side):
+        team2_t_side = self.dataframe[(self.dataframe['team'] == team) & (self.dataframe['side'] == side)]
+        valid_rows = set(self.all_rows_within_bounds())
+
+        team2_t_side_in_bounds = team2_t_side.index.isin(valid_rows)
+        res = team2_t_side_in_bounds.mean() >= 0.5
         
-if __name__ == '__main__':
-    boundary = [
-                    [-1735, 250], 
-                    [-2024, 398], 
-                    [-2806, 742],
-                    [-2472, 1233],
-                    [-1565, 580]
-                  ]
-    gameState = ProcessGameState('./data/game_state_frame_data.pickle', boundary, (285, 421))
+        return res
     
-    
-    print(gameState.all_rows_within_bounds())
+    # returns the average timer that a team and side enters a bombsite with certain weapons and number of weapons
+    def average_timer(self, team, side, bombsite, weapons, min_num):
+        pass
