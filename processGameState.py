@@ -19,25 +19,23 @@ class ProcessGameState:
     
     # private helper function to check if row is within the boundary, stackoverflow proves runtime efficiency
     # https://stackoverflow.com/questions/36399381/whats-the-fastest-way-of-checking-if-a-point-is-inside-a-polygon-in-python
-    def _row_within_bounds(self, x, y, z):
+    def _row_within_bounds(self, x_list, y_list, z_list):
         zmin, zmax = self.zaxis_bounds
         
-        if self.polygon_path.contains_point((x, y)):
-            return zmin <= z <= zmax
-        else:
-            return False
+        inside_polygon = self.polygon_path.contains_points(np.column_stack((x_list, y_list)))
+        within_z_bounds = np.logical_and(zmin <= z_list, z_list <= zmax)
+        
+        return inside_polygon & within_z_bounds
     
     # returns a list of all rows within provided boundary
     def all_rows_within_bounds(self):
-        valid_rows = []
+        x_list = self.dataframe['x'].values
+        y_list = self.dataframe['y'].values
+        z_list = self.dataframe['z'].values
         
-        for idx, row in self.dataframe.iterrows():
-            x, y, z = row['x'], row['y'], row['z']
-            
-            if self._row_within_bounds(x, y, z):
-                valid_rows.append(idx)
-            
-        return valid_rows
+        valid_rows = np.where(self._row_within_bounds(x_list, y_list, z_list))[0]
+        
+        return valid_rows.tolist()
     
     # returns a list of tuples of all weapon_classes and their count
     def extract_weapon_classes(self):
