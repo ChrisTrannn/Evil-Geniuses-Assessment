@@ -15,7 +15,8 @@ The code snippet checks if entering the light blue boundary is a common strategy
 The code calculates the average time it takes for Team2 on the T side to enter BombsiteB with at least 2 rifles or SMGs. The average time is displayed in the console.
 
 ## Task C: CT Side Analysis
-For task C, additional implementation is required. This task involves examining the CT (counter-terrorist) side of Team2 inside BombsiteB. To provide insights to the coaching staff, you can extend the ProcessGameState class or create a separate method to analyze player positions, past behavior, or any relevant factors. The results should be printed or displayed in the desired format.
+Task C involves examining the CT (counter-terrorist) side of Team2 inside BombsiteB, and
+outputting a heatmap that shows supspected places that enemies will be waiting.
 
 ## Task No Code:
 The solution I proposed is a web app that uses Flask as the backend
