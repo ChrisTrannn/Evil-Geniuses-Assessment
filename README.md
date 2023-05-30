@@ -33,7 +33,9 @@ Team2 on T (terrorist) side. I determined this by calculating the frequency of T
 on how often their coordinates were in the light blue zone, I used that number and compared to a threshold of 50%. If the coordinates
 of Team2 on T side were not in the light blue zone for more than
 50% of the time, I deemed it not a common strategy.
-- I would make the following changes to my code, 
+- Adjustments I would make to the code, find the number of times all 5 players entered
+the zone, and divide by the total number of rounds for Team2 on T side. This would
+yield the result that the strategy would not work, but code wise it is more accurate answer that can be applied with different inputs.
 
 #### b. What is the average timer that Team2 on T (terrorist) side enters “BombsiteB” with least 2 rifles or SMGs?
 - The average timer that Team2 on T side enters BombsiteB
@@ -58,6 +60,7 @@ for handling requests and fetching the data from a data storage like a MySQL dat
 For the UI, it is imperative to have data visualization in the form of maps, charts, and graphs.
 This application is feasible to build in under a week and can be deployed to a cloud service
 such as AWS or Azure. Options to export data based on user input should also be possible.
+![Flask](./images/FlaskImage.png)
 
 #### Ease of use:
 - By abstracting away all the code and providing a user friendly interface,

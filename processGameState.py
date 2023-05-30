@@ -52,7 +52,7 @@ class ProcessGameState:
         return weapon_classes
     
 if __name__ == '__main__':
-    # input parameters
+    # testing only
     filePath = './data/game_state_frame_data.pickle'
     boundary = [
                     [-1735, 250], 

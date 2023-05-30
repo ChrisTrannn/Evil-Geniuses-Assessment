@@ -17,6 +17,8 @@ def average_time(team, side, site, game_state):
     dataframe = game_state.dataframe
     filtered_dataframe = dataframe[(dataframe['team'] == team) & (dataframe['side'] == side) & (dataframe['area_name'] == site)]
     
+    # needs to filter out rounds where there are not at least 2 rifles or smgs
+    
     grouped_data = filtered_dataframe.groupby(['round_num', 'player'])
     average_times = grouped_data['seconds'].mean()
     average_times = average_times.dropna()
