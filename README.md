@@ -10,7 +10,9 @@ Navigate to the main.py file and hit the run button or type
 "python main.py" to start executing the program.
 
 ## Results
-The results and analysis to the questions can be found below.
+The results and analysis to the questions can be found below. I have
+added some extra commentary to explain my design decisions and why
+I chose them over someting else.
 
 ## Task 1
 #### a. Handle file ingestion and ETL (if deemed necessary)
