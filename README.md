@@ -14,7 +14,7 @@ The results and analysis to the questions can be found below.
 
 ## Task 1
 #### a. Handle file ingestion and ETL (if deemed necessary)
-- def _load_data(self, file): handle the file ingestion and loads
+- def _load_data(self, file): handles the file ingestion and loads
 the pandas dataframe into the class
 
 #### b. Return whether or not each row falls within a provided boundary
@@ -33,10 +33,11 @@ Team2 on T (terrorist) side. I determined this by calculating the frequency of T
 on how often their coordinates were in the light blue zone, I used that number and compared to a threshold of 50%. If the coordinates
 of Team2 on T side were not in the light blue zone for more than
 50% of the time, I deemed it not a common strategy.
+- I would make the following changes to my code, 
 
 #### b. What is the average timer that Team2 on T (terrorist) side enters “BombsiteB” with least 2 rifles or SMGs?
 - The average timer that Team2 on T side enters BombsiteB
-with at least 2 rife is 39.0147908036336 seconds. This is calculated by filtering the dataframe based on team, side, site, number of players left, and whether bomb is planted. Then the average of
+with at least 2 rifles or smgs is 39.0147908036336 seconds. This is calculated by filtering the dataframe based on team, side, site, number of players left, and whether bomb is planted. Then the average of
 the seconds is taken to get the average time it takes for T side
 to come to BombsiteB.
 

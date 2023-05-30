@@ -54,15 +54,25 @@ if __name__ == '__main__':
     
     game_state = ProcessGameState(filePath, boundary, zaxis_bounds)
     
+    print('----------Results----------')
     # TASK A
+    print('Task A')
+    print('--------')
     if in_boundary_frequency('Team2', 'T', game_state) >= 0.5:
         print('Team2 on T side entering the light blue boundary is a common strategy.')
     else:
         print('Team2 on T side entering the light blue boundary is not a common strategy.')
-        
+    print('--------')
+    
     # TASK B
+    print('Task B')
+    print('--------')
     avg_time = average_time('Team2', 'T', 'BombsiteB', game_state)
     print(f'The average time it takes for Team2 on T side to enter BombsiteB is {avg_time} seconds.')
+    print('--------')
     
     # TASK C
+    print('Task C')
+    print('Generating heatmap.')
     generate_heatmap('Team2', 'CT', 'BombsiteB', game_state)
+    print('----------End Program----------')
