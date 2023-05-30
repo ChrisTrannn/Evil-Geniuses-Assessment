@@ -20,7 +20,10 @@ the pandas dataframe into the class
 #### b. Return whether or not each row falls within a provided boundary
 - def all_rows_within_bounds(self): returns returns all the rows that
 are within the blue boundary, it uses the indices specifically so row
-count will start at 0
+count will start at 0. For this method I used matplotlib path library
+to detect when points would fall in a shape. This method, while uses
+external depenedencies, has performance speeds. The exact stackoverflow article that proves this can be found here.
+https://stackoverflow.com/questions/36399381/whats-the-fastest-way-of-checking-if-a-point-is-inside-a-polygon-in-python
 
 #### c. Extract the weapon classes from the inventory json column
 - def extract_weapon_classes(self): returns the following dictionary

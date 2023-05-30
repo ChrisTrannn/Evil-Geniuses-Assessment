@@ -18,7 +18,6 @@ class ProcessGameState:
         return data
     
     # private helper function to check if row is within the boundary, stackoverflow proves runtime efficiency
-    # https://stackoverflow.com/questions/36399381/whats-the-fastest-way-of-checking-if-a-point-is-inside-a-polygon-in-python
     def _row_within_bounds(self, x_list, y_list, z_list):
         zmin, zmax = self.zaxis_bounds
         
