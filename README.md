@@ -7,7 +7,7 @@ To run the code, you need to have Python installed on your system. Additionally,
 
 ## How to Run
 Navigate to the main.py file and hit the run button or type
-python main.py to start executing the program.
+"python main.py" to start executing the program.
 
 ## Results
-The results to the questions requested are in the markdown file called Results.md.
+The results and analysis to the questions requested are in the markdown file called Results.md.
