@@ -19,7 +19,7 @@ def average_time(team, side, site, game_state):
 # function that returns a heatmap of a team on a specific side holding down a site
 def generate_heatmap(team, side, site, game_state):
     dataframe = game_state.dataframe
-    filtered_dataframe = dataframe[(dataframe['team'] == team) & (dataframe['side'] == side) & (dataframe['area_name'] == site)]
+    filtered_dataframe = dataframe[(dataframe['team'] == team) & (dataframe['side'] == side) & (dataframe['area_name'] == site) & (dataframe['t_alive'] == 5) & (dataframe['ct_alive'] == 5) & (dataframe['bomb_planted'] == False)]
     
     x = filtered_dataframe['x']
     y = filtered_dataframe['y']

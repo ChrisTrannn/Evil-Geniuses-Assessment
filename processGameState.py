@@ -37,14 +37,16 @@ class ProcessGameState:
         
         return valid_rows.tolist()
     
-    # returns a list of tuples of all weapon_classes and their count
+    # returns a dictionary where the key is the weapon class and the value is a set of all weapons in that class
     def extract_weapon_classes(self):
-        weapon_classes = defaultdict(int)
+        weapon_classes = defaultdict(set)
         inventory = self.dataframe['inventory']
         
         for arr in inventory:
             if arr is not None:
                 dct = arr[0]
-                weapon_classes[dct['weapon_class']] += 1
+                weapon_class = dct['weapon_class']
+                weapon_name = dct['weapon_name']
+                weapon_classes[weapon_class].add(weapon_name)
         
-        return list(weapon_classes.items())
+        return weapon_classes

@@ -1,13 +1,21 @@
 # Task 2
 ### a. Is entering via the light blue boundary a common strategy used by Team2 on T (terrorist) side?
 - Entering the light blue boundary is not a common strategy used by
-Team2 on T (terrorist) side.
+Team2 on T (terrorist) side. I determined this by calculating the frequency of Team2 on T side being in the light blue boundary. Based
+on how often their coordinates were in the light blue zone, I used that number and compared to a threshold of 50%. If the coordinates
+of Team2 on T side were not in the light blue zone for more than
+50% of the time, I deemed it not a common strategy.
 
 ### b. What is the average timer that Team2 on T (terrorist) side enters “BombsiteB” with least 2 rifles or SMGs?
 - 
 
 ### c. Now that we’ve gathered data on Team2 T side, let's examine their CT (counter-terrorist) Side. Using the same data set, tell our coaching staff where you suspect them to be waiting inside “BombsiteB”
-- ![HeatMap](./HeatMap.png)
+- The heatmap provided shows all the areas that Team2 on CT side 
+frequenly appear in. The brighter spots in the heatmap are areas
+that they will likely be waiting for the T side. I achieved this
+heatmap by filtering all the dataframe by Team2, CT, and BombsiteB.
+Then I plotted all their points into a heatmap.
+![HeatMap](./images/HeatMap.png)
 
 # Task 3
 - The solution I propose to allow the CS:GO coaching staff to request and acquire
