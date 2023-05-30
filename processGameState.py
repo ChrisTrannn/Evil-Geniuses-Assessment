@@ -50,3 +50,18 @@ class ProcessGameState:
                 weapon_classes[weapon_class].add(weapon_name)
         
         return weapon_classes
+    
+if __name__ == '__main__':
+    # input parameters
+    filePath = './data/game_state_frame_data.pickle'
+    boundary = [
+                    [-1735, 250], 
+                    [-2024, 398], 
+                    [-2806, 742],
+                    [-2472, 1233],
+                    [-1565, 580]
+                ]
+    zaxis_bounds = (285, 421)
+    
+    game_state = ProcessGameState(filePath, boundary, zaxis_bounds)
+    print(game_state.extract_weapon_classes())

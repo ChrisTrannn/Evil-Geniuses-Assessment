@@ -12,6 +12,20 @@ Navigate to the main.py file and hit the run button or type
 ## Results
 The results and analysis to the questions can be found below.
 
+## Task 1
+#### a. Handle file ingestion and ETL (if deemed necessary)
+- def _load_data(self, file): handle the file ingestion and loads
+the pandas dataframe into the class
+
+#### b. Return whether or not each row falls within a provided boundary
+- def all_rows_within_bounds(self): returns returns all the rows that
+are within the blue boundary, it uses the indices specifically so row
+count will start at 0
+
+#### c. Extract the weapon classes from the inventory json column
+- def extract_weapon_classes(self): returns the following dictionary
+{'Pistols': {'USP-S', 'Glock-18', 'Dual Berettas', 'Five-SeveN', 'Tec-9', 'Desert Eagle', 'P250'}, 'Grenade': {'Flashbang', 'Smoke Grenade', 'Molotov', 'HE Grenade', 'Decoy Grenade', 'Incendiary Grenade'}, 'Rifle': {'Galil AR', 'SG 553', 'AK-47', 'SSG 08', 'M4A1', 'FAMAS', 'AWP'}, 'SMG': {'MP9'}}
+
 ## Task 2
 #### a. Is entering via the light blue boundary a common strategy used by Team2 on T (terrorist) side?
 - Entering the light blue boundary is not a common strategy used by
