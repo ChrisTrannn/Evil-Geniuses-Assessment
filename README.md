@@ -40,7 +40,7 @@ of Team2 on T side were not in the light blue zone for more than
 50% of the time, I deemed it not a common strategy.
 - Adjustments I would make to the code, find the number of times all 5 players entered
 the zone, and divide by the total number of rounds for Team2 on T side. This would
-yield the result that the strategy would not work, but code wise it is more accurate answer that can be applied with different inputs.
+way would also return that entering the boundary is not a common strategy. However, code wise it returns a more accurate result in terms of the frequency of entries into the boundary.
 
 #### b. What is the average timer that Team2 on T (terrorist) side enters “BombsiteB” with least 2 rifles or SMGs?
 - The average timer that Team2 on T side enters BombsiteB
