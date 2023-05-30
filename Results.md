@@ -1,12 +1,12 @@
 # Task 2
-a. Is entering via the light blue boundary a common strategy used by Team2 on T (terrorist) side?
+### a. Is entering via the light blue boundary a common strategy used by Team2 on T (terrorist) side?
 - Entering the light blue boundary is not a common strategy used by
 Team2 on T (terrorist) side.
 
-b. What is the average timer that Team2 on T (terrorist) side enters “BombsiteB” with least 2 rifles or SMGs?
+### b. What is the average timer that Team2 on T (terrorist) side enters “BombsiteB” with least 2 rifles or SMGs?
 - 
 
-c. Now that we’ve gathered data on Team2 T side, let's examine their CT (counter-terrorist) Side. Using the same data set, tell our coaching staff where you suspect them to be waiting inside “BombsiteB”
+### c. Now that we’ve gathered data on Team2 T side, let's examine their CT (counter-terrorist) Side. Using the same data set, tell our coaching staff where you suspect them to be waiting inside “BombsiteB”
 - 
 
 # Task 3
