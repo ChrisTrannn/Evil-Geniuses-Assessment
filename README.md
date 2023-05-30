@@ -4,7 +4,9 @@
 To run the code, you need to have Python installed on your system. Additionally, you need to install the following dependencies:
 * pandas: pip install pandas
 * matplotlib: pip install matplotlib
-Run the main.py file to start executing the script.
+
+## How to Run
+Navigate to the main.py file to start executing the script.
 
 ## Task A: Common Strategy
 The code snippet checks if entering the light blue boundary is a common strategy used by Team2 on the T (terrorist) side. It determines the proportion of entries within the boundary and compares it to a threshold of 50%. The result is displayed in the console.
