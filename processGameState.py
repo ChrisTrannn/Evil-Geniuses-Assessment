@@ -51,14 +51,32 @@ class ProcessGameState:
     
     # returns a boolean when a team and side enters the boundary more than 50% of the time
     def is_common_strategy(self, team, side):
-        team2_t_side = self.dataframe[(self.dataframe['team'] == team) & (self.dataframe['side'] == side)]
+        team_side = self.dataframe[(self.dataframe['team'] == team) & (self.dataframe['side'] == side)]
         valid_rows = set(self.all_rows_within_bounds())
 
-        team2_t_side_in_bounds = team2_t_side.index.isin(valid_rows)
-        avarege_in_bounds = team2_t_side_in_bounds.mean()
+        team_side_within_bounds = team_side.index.isin(valid_rows)
+        avarege_in_bounds = team_side_within_bounds.mean()
 
         return avarege_in_bounds >= 0.5
     
-    # returns the average timer that a team and side enters a bombsite with certain weapons and number of weapons
-    def average_timer(self, team, side, bombsite, weapons, min_num):
-        pass
+    # returns the average time that a team and side enters a bombsite with certain weapons and number of weapons
+    def average_time(self, team, side, site, weapons, min_num):
+        team_side_site = self.dataframe[(self.dataframe['team'] == team) & (self.dataframe['side'] == side) & (self.dataframe['area_name'] == site)]
+        
+        for idx, row in team_side_site.iterrows():
+            print(idx)
+    
+if __name__ == '__main__':
+    filePath = './data/game_state_frame_data.pickle'
+    boundary = [
+                    [-1735, 250], 
+                    [-2024, 398], 
+                    [-2806, 742],
+                    [-2472, 1233],
+                    [-1565, 580]
+                ]
+    zaxis_bounds = (285, 421)
+    game_state = ProcessGameState(filePath, boundary, zaxis_bounds)
+    
+    team, side, site, weapons, min_num = 'Team2', 'T', 'BombsiteB', ['Rifle', 'SMG'], 2
+    print(game_state.average_time(team, side, site, weapons, min_num))
