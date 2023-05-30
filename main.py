@@ -1,7 +1,20 @@
 # run pip install pandas and matplotlib if not installed already
 from processGameState import ProcessGameState
 
+# function that returns how frequent a team on a specific side is within the boundary
+def in_boundary_frequency(team, side, game_state):
+    dataframe = game_state.dataframe
+    filtered_dataframe = dataframe[(dataframe['team'] == team) & (dataframe['side'] == side)]
+    valid_rows = game_state.all_rows_within_bounds()
+    filtered_dataframe = filtered_dataframe.index.isin(valid_rows)
+    
+    return filtered_dataframe.mean()
+    
+def average_time(team, side, site, game_state):
+    pass
+
 if __name__ == '__main__':
+    # input parameters
     filePath = './data/game_state_frame_data.pickle'
     boundary = [
                     [-1735, 250], 
@@ -11,20 +24,15 @@ if __name__ == '__main__':
                     [-1565, 580]
                 ]
     zaxis_bounds = (285, 421)
+    
     game_state = ProcessGameState(filePath, boundary, zaxis_bounds)
     
-    # a. Is entering via the light blue boundary a common strategy used by Team2 on T (terrorist) side?
-    # common strategy is determined if the proportion of entries in the boundary is greater than 50%
-    team, side = 'Team2', 'T'
-    if game_state.is_common_strategy(team, side):
-        print(f"Entering the light blue boundary is a common strategy used by {team} on {side} side.")
+    # TASK A
+    # if the frequency of a team entering the boundayr is less than 50%, it is not a common strategy
+    if in_boundary_frequency('Team2', 'T', game_state) >= 0.5:
+        print('Team2 on T side entering the light blue boundary is a common strategy.')
     else:
-        print(f"Entering the light blue boundary is not a common strategy used by {team} on {side} side.")
-    
-    # b. What is the average time that Team2 on T (terrorist) side enters BombsiteB with least 2 rifles or SMGs?
-    team, side, site, weapons, min_num = 'Team2', 'T', 'BombsiteB', ['Rifle', 'SMG'], 2
-    print(f'Average time: {game_state.average_time(team, side, site, weapons, min_num)}')
-    
-    # c. Now that we’ve gathered data on Team2 T side, let's examine their CT
-    # (counter-terrorist) Side. Using the same data set, tell our coaching
-    #staff where you suspect them to be waiting inside “BombsiteB”
+        print('Team2 on T side entering the light blue boundary is not a common strategy.')
+        
+    # TASK B
+    average_time('Team2', 'T', 'BombsiteB', game_state)
