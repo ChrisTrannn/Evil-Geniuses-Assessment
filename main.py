@@ -1,6 +1,7 @@
 # run pip install pandas and matplotlib if not installed already
 from processGameState import ProcessGameState
 import matplotlib.pyplot as plt
+import numpy as np
 
 # function that returns how frequent a team on a specific side is within the boundary
 def in_boundary_frequency(team, side, game_state):
@@ -15,6 +16,13 @@ def in_boundary_frequency(team, side, game_state):
 def average_time(team, side, site, game_state):
     dataframe = game_state.dataframe
     filtered_dataframe = dataframe[(dataframe['team'] == team) & (dataframe['side'] == side) & (dataframe['area_name'] == site)]
+    
+    grouped_data = filtered_dataframe.groupby(['round_num', 'player'])
+    average_times = grouped_data['seconds'].mean()
+    average_times = average_times.dropna()
+    overall_average_time = np.mean(average_times)
+
+    return overall_average_time
     
 # function that returns a heatmap of a team on a specific side holding down a site
 def generate_heatmap(team, side, site, game_state):

@@ -7,7 +7,10 @@ of Team2 on T side were not in the light blue zone for more than
 50% of the time, I deemed it not a common strategy.
 
 ### b. What is the average timer that Team2 on T (terrorist) side enters “BombsiteB” with least 2 rifles or SMGs?
-- 
+- The average timer that Team2 on T side enters BombsiteB
+with at least 2 rife is 39.0147908036336 seconds. This is calculated by filtering the dataframe based on team, side, site, number of players left, and whether bomb is planted. Then the average of
+the seconds is taken to get the average time it takes for T side
+to come to BombsiteB.
 
 ### c. Now that we’ve gathered data on Team2 T side, let's examine their CT (counter-terrorist) Side. Using the same data set, tell our coaching staff where you suspect them to be waiting inside “BombsiteB”
 - The heatmap provided shows all the areas that Team2 on CT side 
