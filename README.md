@@ -52,8 +52,10 @@ to come to BombsiteB.
 - The heatmap provided shows all the areas that Team2 on CT side 
 frequenly appear in. The brighter spots in the heatmap are areas
 that they will likely be waiting for the T side. I achieved this
-heatmap by filtering all the dataframe by Team2, CT, and BombsiteB.
-Then I plotted all their points into a heatmap.
+heatmap by filtering the dataframe by Team2, CT, BombsiteB, number of players left, and bomb_planted is false.
+Then I plotted all their points into a heatmap based on these conditions. I realize that this design decision accounts for no lurkers. If there is a lurker, they can get picked off and my condition wouldn't work. This approach assumes that everyone is
+alive and the bomb has not been planted. The filter can be adjusted
+to account for lesser number of players.
 ![HeatMap](./images/HeatMap.png)
 
 ## Task 3
