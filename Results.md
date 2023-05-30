@@ -7,7 +7,7 @@ Team2 on T (terrorist) side.
 - 
 
 ### c. Now that we’ve gathered data on Team2 T side, let's examine their CT (counter-terrorist) Side. Using the same data set, tell our coaching staff where you suspect them to be waiting inside “BombsiteB”
-- 
+- ![HeatMap](./HeatMap.png)
 
 # Task 3
 - The solution I propose to allow the CS:GO coaching staff to request and acquire

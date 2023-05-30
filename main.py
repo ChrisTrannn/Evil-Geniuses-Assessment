@@ -1,5 +1,6 @@
 # run pip install pandas and matplotlib if not installed already
 from processGameState import ProcessGameState
+import matplotlib.pyplot as plt
 
 # function that returns how frequent a team on a specific side is within the boundary
 def in_boundary_frequency(team, side, game_state):
@@ -10,8 +11,26 @@ def in_boundary_frequency(team, side, game_state):
     
     return filtered_dataframe.mean()
     
+# function that returns the average time a team on a specific side takes to enter a site
 def average_time(team, side, site, game_state):
-    pass
+    dataframe = game_state.dataframe
+    filtered_dataframe = dataframe[(dataframe['team'] == team) & (dataframe['side'] == side) & (dataframe['area_name'] == site)]
+    
+# function that returns a heatmap of a team on a specific side holding down a site
+def generate_heatmap(team, side, site, game_state):
+    dataframe = game_state.dataframe
+    filtered_dataframe = dataframe[(dataframe['team'] == team) & (dataframe['side'] == side) & (dataframe['area_name'] == site)]
+    
+    x = filtered_dataframe['x']
+    y = filtered_dataframe['y']
+
+    plt.hist2d(x, y, bins=30, cmap='hot')
+    
+    plt.colorbar()
+    plt.title(f'{side} Side {site} Heatmap')
+    plt.xlabel('X-coordinate')
+    plt.ylabel('Y-coordinate')
+    plt.show()
 
 if __name__ == '__main__':
     # input parameters
@@ -28,11 +47,14 @@ if __name__ == '__main__':
     game_state = ProcessGameState(filePath, boundary, zaxis_bounds)
     
     # TASK A
-    # if the frequency of a team entering the boundayr is less than 50%, it is not a common strategy
     if in_boundary_frequency('Team2', 'T', game_state) >= 0.5:
         print('Team2 on T side entering the light blue boundary is a common strategy.')
     else:
         print('Team2 on T side entering the light blue boundary is not a common strategy.')
         
     # TASK B
-    average_time('Team2', 'T', 'BombsiteB', game_state)
+    avg_time = average_time('Team2', 'T', 'BombsiteB', game_state)
+    print(f'The average time it takes for Team2 on T side to enter BombsiteB is {avg_time} seconds.')
+    
+    # TASK C
+    generate_heatmap('Team2', 'CT', 'BombsiteB', game_state)
